@@ -12,3 +12,8 @@ class NightWriter
     input_to_s.split("")
   end
 end
+
+message_file = ARGV.first
+braille_file = ARGV[1]
+
+print File.read(message_file) if ARGV.first

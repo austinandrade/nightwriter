@@ -3,8 +3,8 @@ require './test/test_helper'
 class NightWriterTest < Minitest::Test
   def test_it_exists
     input = "bananas"
-    night_writer = NightWriter.new(input)
-    assert_instance_of NightWriter, night_writer
+    night_writer1 = NightWriter.new
+    assert_instance_of NightWriter, night_writer1
   end
 
   def test_it_takes_args
