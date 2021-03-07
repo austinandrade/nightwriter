@@ -1,37 +1,28 @@
 class NightWriter
-  attr_reader :input
+  attr_reader :input, :message_file, :braille_file
   def initialize(input)
     @input = input
-    @night_reader = NightReader.new
+    @message_file = ARGV[0]
+    @braille_file = ARGV[1]
   end
 
-  def input_to_s
-    input.to_s
+  def read_input_lines
+    File.readlines(ARGV[0])
   end
 
-  def input_to_individual_character_array
-    input_to_s.split("")
+  def message_file_count
+    read_input_lines.length
   end
 
-  def starting_message(starting, ending)
-    puts "Created #{ending} containing 256 characters"
+  def create_braille_txt
+    File.open("braille.txt", "w") {|f| f.write("#{lines}")}
   end
 
-  def dictionary(letter)
-    require "pry"; binding.pry
-    if letter == "a"
-      "0....."
-     end
+  def arg_reader_and_writer
+    if create_braille_txt
+      puts "Created #{braille_txt} containing #{total_characters} characters"
+    else
+      puts "Created 'braille.txt' containing 256 characters"
+    end
   end
-
-  # message_txt = ARGV[0]
-  # braille_txt = ARGV[1]
-  # lines = File.readlines(ARGV[0])
-  # line_count = lines.size
-  # text = lines.join
-  # total_characters = text.length
-  # create_braille_txt = File.open("braille.txt", "w") {|f| f.write("#{lines}") }
-  # puts "Created #{braille_txt} containing #{total_characters} characters" if create_braille_txt
-  # ARGF.read
-
 end

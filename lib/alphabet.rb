@@ -15,4 +15,8 @@ class Alphabet
       end
     end
   end
+
+  def count?
+    @alphabet_list[0].count
+  end
 end

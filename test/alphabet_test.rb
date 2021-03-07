@@ -28,4 +28,10 @@ class AlphabetTest < Minitest::Test
     alphabet.add_alphabet
     assert_equal true, alphabet.contains?("a")
   end
+
+  def test_it_can_grab_count
+    alphabet = Alphabet.new
+    alphabet.add_alphabet
+    assert_equal 40, alphabet.count?
+  end
 end
