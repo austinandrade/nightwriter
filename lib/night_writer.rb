@@ -24,10 +24,10 @@ class NightWriter
     if @braille_file.length && @message_file.length >= 1
       File.open("#{@braille_file}", "w") do |f|
         translated_to_braille = read_input_lines.split("").map do |letter|
-          dictionary.input_to_braille(letter)
+          # require "pry"; binding.pry
+          dictionary.english_to_braille(letter)
         end
-        # require "pry"; binding.pry
-         joined_braille = translated_to_braille.join
+         joined_braille = translated_to_braille.compact.join
         f.write("#{joined_braille}")
       end
     end

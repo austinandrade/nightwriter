@@ -1,6 +1,6 @@
 require './lib/alphabet'
 class Dictionary
-  def input_to_braille(letter)
+  def english_to_braille(letter)
     if letter == "a" || letter == "A"
       "0. \n .. \n .."
     elsif letter == "b" || letter == "B"
@@ -18,7 +18,7 @@ class Dictionary
     elsif letter == "h" || letter == "H"
       "0. \n 00 \n .."
     elsif letter == "i" || letter == "I"
-      ".0 \n 0. \n .. \n"
+      ".0 \n 0. \n .."
     elsif letter == "j" || letter == "J"
       ".0 \n 00 \n .."
     elsif letter == "k" || letter == "K"
@@ -60,7 +60,7 @@ class Dictionary
     elsif letter == "z" || letter == "#"
       ".0 \n .0 \n 00"
     elsif letter == "z" || letter == " "
-      " .. \n .. \n .."
+      ".. \n .. \n .."
     end
   end
 end
