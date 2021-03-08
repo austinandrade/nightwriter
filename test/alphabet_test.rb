@@ -6,11 +6,6 @@ class AlphabetTest < Minitest::Test
     assert_instance_of Alphabet, alphabet
   end
 
-  def test_alphabet_starts_empty
-    alphabet = Alphabet.new
-    assert_equal [], alphabet.alphabet_list
-  end
-
   def test_it_can_add_alphabet
     alphabet = Alphabet.new
     expected = [["a", "b", "c", "d", "e", "f",

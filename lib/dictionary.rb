@@ -1,66 +1,50 @@
-require './lib/alphabet'
 class Dictionary
   def english_to_braille(letter)
-    if letter == "a" || letter == "A"
-      "0. \n .. \n .."
-    elsif letter == "b" || letter == "B"
-      "0. \n 0. \n .."
-    elsif letter == "c" || letter == "C"
-      "00 \n .. \n .."
-    elsif letter == "d" || letter == "D"
-      "00 \n .0 \n .."
-    elsif letter == "e" || letter == "E"
-      "0. \n .0 \n .."
-    elsif letter == "f" || letter == "F"
-      "00 \n 0. \n .."
-    elsif letter == "g" || letter == "G"
-      "00 \n 00 \n .."
-    elsif letter == "h" || letter == "H"
-      "0. \n 00 \n .."
-    elsif letter == "i" || letter == "I"
-      ".0 \n 0. \n .."
-    elsif letter == "j" || letter == "J"
-      ".0 \n 00 \n .."
-    elsif letter == "k" || letter == "K"
-      "0. \n .. \n 0."
-    elsif letter == "l" || letter == "L"
-      "0. \n 0. \n 0."
-    elsif letter == "m" || letter == "M"
-      "00 \n .. \n 0."
-    elsif letter == "n" || letter == "N"
-      "00 \n .0 \n 0."
-    elsif letter == "o" || letter == "O"
-      "0. \n .0 \n 0."
-    elsif letter == "p" || letter == "P"
-      "00 \n 0. \n 0."
-    elsif letter == "q" || letter == "Q"
-      "00 \n 00 \n 0."
-    elsif letter == "r" || letter == "R"
-      "0. \n 00 \n 0."
-    elsif letter == "s" || letter == "S"
-      ".0 \n 0. \n 0."
-    elsif letter == "t" || letter == "T"
-      ".0 \n 00 \n 0."
-    elsif letter == "u" || letter == "U"
-      "0. \n .. \n 00"
-    elsif letter == "v" || letter == "V"
-      "0. \n 0. \n 00"
-    elsif letter == "w" || letter == "W"
-      ".0 \n 00 \n .0"
-    elsif letter == "x" || letter == "X"
-      "00 \n .. \n 00"
-    elsif letter == "y" || letter == "Y"
-      "00 \n .0 \n 00"
-    elsif letter == "z" || letter == "Z"
-      "0. \n .0 \n 00"
-    elsif letter == "z" || letter == "."
-      ".. \n 00 \n .0"
-    elsif letter == "z" || letter == ","
-      ".. \n 0. \n .."
-    elsif letter == "z" || letter == "#"
-      ".0 \n .0 \n 00"
-    elsif letter == "z" || letter == " "
-      ".. \n .. \n .."
-    end
+    english_to_b_h = {
+                    "a" => ["0.", "..", ".."],
+                    "b" => ["0.", "0.", ".."],
+                    "c" => ["00", "..", ".."],
+                    "d" => ["00", ".0", ".."],
+                    "e" => ["0.", ".0", ".."],
+                    "f" => ["00", "0.", ".."],
+                    "g" => ["00", "00", ".."],
+                    "h" => ["0.", "00", ".."],
+                    "i" => [".0", "0.", ".."],
+                    "j" => [".0", "00", ".."],
+                    "k" => ["0.", "..", "0."],
+                    "l" => ["0.", "0.", "0."],
+                    "m" => ["00", "..", "0."],
+                    "n" => ["00", ".0", "0."],
+                    "o" => ["0.", ".0", "0."],
+                    "p" => ["00", "0.", "0."],
+                    "q" => ["00", "00", "0."],
+                    "r" => ["0.", "00", "0."],
+                    "s" => [".0", "0.", "0."],
+                    "t" => [".0", "00", "0."],
+                    "u" => ["0.", "..", "00"],
+                    "v" => ["0.", "0.", "00"],
+                    "w" => [".0", "00", ".0"],
+                    "x" => ["00", "..", "00"],
+                    "y" => ["00", ".0", "00"],
+                    "z" => ["0.", ".0", "00"],
+                    "." => ["..", "00", ".0"],
+                    "," => ["..", "0.", ".."],
+                    "#" => [".0", ".0", "00"],
+                    " " => ["..", "..", ".."],
+                    "'" => ["..", "..", "0."],
+                    "-" => ["..", "..", "00"],
+                    "?" => ["..", "0.", "00"],
+                    "1" => ["0.", "..", ".."],
+                    "2" => ["0.", "0.", ".."],
+                    "3" => ["00", "..", ".."],
+                    "4" => ["00", ".0", ".."],
+                    "5" => ["0.", ".0", ".."],
+                    "6" => ["00", "0.", ".."],
+                    "7" => ["00", "00", ".."],
+                    "8" => ["0.", "00", ".."],
+                    "9" => [".0", "0.", ".."],
+                    "0" => [".0", "00", ".."]
+                     }
+    english_to_b_h[letter]
   end
 end
