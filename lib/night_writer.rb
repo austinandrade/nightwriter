@@ -50,7 +50,7 @@ class NightWriter
       middle << a[1]
       bottom << a[2]
     end
-
+    
     top.join + "\n" + middle.join + "\n" + bottom.join + "\n"
   end
 end

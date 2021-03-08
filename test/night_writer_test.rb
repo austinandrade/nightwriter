@@ -44,4 +44,14 @@ class NightWriterTest < Minitest::Test
                 ["0.", "..", ".."], ["0.", "..", "0."], ["..", "00", ".0"]]
     assert_equal expected, night_writer.translate_to_braille
   end
+
+  def test_it_can_convert_braille_to_rows
+    night_writer = NightWriter.new
+    night_writer.stubs(:read_input_lines).returns("I may bend, but I don't break.")
+    expected = ".0..000.00..0.0.0000....0.0..0...0..000.00...0..0.0.0.0.0...
+0........0..0..0.0.00...0...00..0....0.0.0..00..0.00.0....00
+....0...00......0.........000.........0.0.0.0.....0.....0..0
+"
+    assert_equal expected, night_writer.convert_braille_to_rows
+  end
 end
