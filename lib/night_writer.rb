@@ -50,8 +50,21 @@ class NightWriter
       middle << a[1]
       bottom << a[2]
     end
-    
-    top.join + "\n" + middle.join + "\n" + bottom.join + "\n"
+    limit_lines_to_80_characters(top, middle, bottom)
+  end
+
+  def limit_lines_to_80_characters(top, middle, bottom)
+    text_limited_braille = []
+    until top.length == 0
+      # require "pry"; binding.pry
+      text_limited_braille << top.slice!(0..39)
+      text_limited_braille << "\n"
+      text_limited_braille << middle.slice!(0..39)
+      text_limited_braille << "\n"
+      text_limited_braille << bottom.slice!(0..39)
+      text_limited_braille << "\n"
+    end
+    text_limited_braille.join
   end
 end
 
