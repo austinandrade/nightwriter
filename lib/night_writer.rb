@@ -36,6 +36,7 @@ class NightWriter
   def translate_to_braille
     translator = Translator.new
     read_input_lines.downcase.chars.map do |letter|
+
       translator.english_to_braille(letter)
     end
   end
@@ -44,7 +45,6 @@ class NightWriter
     top = []
     middle = []
     bottom = []
-
     translate_to_braille.each do |a|
       top << a[0]
       middle << a[1]
