@@ -1,4 +1,4 @@
-require './lib/dictionary'
+require './lib/translator'
 class NightWriter
   attr_reader :message_file, :braille_file
   def initialize
@@ -34,9 +34,9 @@ class NightWriter
   end
 
   def translate_to_braille
-    dictionary = Dictionary.new
+    translator = Translator.new
     read_input_lines.downcase.chars.map do |letter|
-      dictionary.english_to_braille(letter)
+      translator.english_to_braille(letter)
     end
   end
 
@@ -55,8 +55,7 @@ class NightWriter
 
   def limit_lines_to_80_characters(top, middle, bottom)
     text_limited_braille = []
-    until top.length == 0
-      # require "pry"; binding.pry
+    while top.length != 0
       text_limited_braille << top.slice!(0..39)
       text_limited_braille << "\n"
       text_limited_braille << middle.slice!(0..39)
@@ -67,7 +66,6 @@ class NightWriter
     text_limited_braille.join
   end
 end
-
 
 night_writer = NightWriter.new
 night_writer.starting_message
